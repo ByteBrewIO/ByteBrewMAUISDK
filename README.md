@@ -121,6 +121,16 @@ namespace ByteBrewMAUITestApp {
             ByteBrew.TrackAdEvent(ByteBrew.ByteBrewAdType.Reward, "main_rv", "test_id", "test_provider");
             LogToConsole("Sending ad event Reward, main_rv, test_id, test_provider");
         }
+        
+        private void SendAdRevenueEvent_Clicked(object sender, EventArgs e) {
+            ByteBrew.TrackAdEvent(ByteBrew.ByteBrewAdType.Reward, "test_provider", "test_unit_name", 0.23456d);
+            LogToConsole("Sending ad revenue event Reward, test_provider, test_unit_name, 0.23456");
+        }
+
+        private void SendAdRevenueEventWithLocation_Clicked(object sender, EventArgs e) {
+            ByteBrew.TrackAdEvent(ByteBrew.ByteBrewAdType.Reward, "test_provider", "test_unit_name", "test_location", 0.23456d);
+            LogToConsole("Sending ad revenue event Reward, test_provider, test_unit_name, test_location, 0.23456");
+        }
 
         private void TrackIAPEvent_Clicked(object sender, EventArgs e) {
             ByteBrew.TrackInAppPurchaseEvent("MAUI_TEST", "USD", 4.99f, "test_product", "test_category");
